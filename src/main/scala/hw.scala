@@ -6,7 +6,7 @@ class Hello {
 
 object Hi { 
 	def main(args: Array[String]) {
-		var hi: String = "Hi there "
+		val hi: String = "Hi there "
 		val names = List("John", "James", "Paul", "Roger")
 		val c = new Hello
 		for(name <- names) {
