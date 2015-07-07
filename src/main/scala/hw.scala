@@ -9,13 +9,27 @@ class Greeting {
 
 object Hi { 
 	def main(args: Array[String]) {
+		// sbt 'run hello' 
+		var output = ""
+		if(args(0) == "hello") {
+			output = hello()
+		}
+		print(output)
+	}
+
+	def hello() : String = {
 		val names = List("John", "James", "Paul", "Roger")
 		val c = new Greeting
+		var response = ""
 		for(name <- names) {
-			var response = c.hello(name)
-			println(response) 
-			response = c.goodbye(name)
-			println(response)
+			response = response + c.hello(name) + "\n"
+			response = response + c.goodbye(name) + "\n"
 		}
+		return response
 	}
+
+	/*
+	def functionName(argumentName: argumentType): ReturnType = {
+	}
+	*/
 }
