@@ -9,12 +9,11 @@ class Greeting {
 
 object Hi { 
 	def main(args: Array[String]) {
-		val hi: String = "Hi there "
 		val names = List("John", "James", "Paul", "Roger")
 		val c = new Greeting
 		for(name <- names) {
 			var response = c.hello(name)
-			println(response)
+			println(response) 
 			response = c.goodbye(name)
 			println(response)
 		}
