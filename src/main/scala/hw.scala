@@ -17,15 +17,16 @@ object Hi {
 		val names = List("John", "James", "Paul", "Roger")
 		val c = new Greeting
 		var response = ""
-		for(name <- names) {
+		/*for(name <- names) {
 			response = response + c.hello(name) + "\n"
 			response = response + c.goodbye(name) + "\n"
-		}
+		}*/
+		names.foreach(name => response = response + c.hello(name) + "\n" + c.goodbye(name) + "\n")
 		return response
 	}
 
 	/*
-	
+
 	def functionName(argumentName: argumentType) : ReturnType = {
 	}
 
