@@ -1,10 +1,6 @@
 class Greeting {
-	def hello(text: String) : String = {
-		return "Hello " + text
-	}
-	def goodbye(text: String) : String = {
-		return "Goodbye " + text
-	}
+	def hello(text: String) : String = "Hello " + text
+	def goodbye(text: String) : String = "Goodbye " + text
 }
 
 object Hi { 
@@ -29,7 +25,11 @@ object Hi {
 	}
 
 	/*
-	def functionName(argumentName: argumentType): ReturnType = {
+	
+	def functionName(argumentName: argumentType) : ReturnType = {
 	}
+
+	def functionName(argumentName: argumentType) : returnType = calculation
+
 	*/
 }
