@@ -27,7 +27,7 @@ object Hi {
 
 	/*
 
-	def functionName(argumentName: argumentType) : ReturnType = {
+	def functionName(argumentName: argumentType) : returnType = {
 		return calculation
 	}
 
