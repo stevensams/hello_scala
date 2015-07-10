@@ -6,11 +6,12 @@ class Greeting {
 object Hi { 
 	def main(args: Array[String]) {
 		// sbt 'run hello' 
-		var output = ""
-		if(args(0) == "hello") {
-			output = hello()
+		val output: String = if(args(0) == "hello") {
+			hello
+		} else {
+			"Unknown argument: " + args(0)
 		}
-		print(output)
+		println(output)
 	}
 
 	def hello() : String = {
