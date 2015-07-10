@@ -22,13 +22,13 @@ object Hi {
 			response = response + c.goodbye(name) + "\n"
 		}*/
 		names.foreach(name => response = response + c.hello(name) + "\n" + c.goodbye(name) + "\n")
-		return response
+		response
 	}
 
 	/*
 
 	def functionName(argumentName: argumentType) : returnType = {
-		return calculation
+		calculation
 	}
 
 	def functionName(argumentName: argumentType) : returnType = calculation
