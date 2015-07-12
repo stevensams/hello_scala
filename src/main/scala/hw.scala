@@ -1,6 +1,16 @@
-class Greeting {
-	def hello(text: String) : String = "Hello " + text
-	def goodbye(text: String) : String = "Goodbye " + text
+trait Hello {
+	val hi: String
+}
+
+trait Goodbye {
+	val bye: String
+}
+
+class Greeting extends Hello with Goodbye {
+	val hi = "Hello "
+	val bye = "Goodbye "
+	def hello(text: String) : String = hi + text
+	def goodbye(text: String) : String = bye + text
 }
 
 object Hi { 
