@@ -1,3 +1,5 @@
+package sams.steven.hw
+
 trait Hello {
 	val hi: String
 }
@@ -9,6 +11,7 @@ trait Goodbye {
 class Greeting(hello: String, goodbye: String) extends Hello with Goodbye {
 	val hi = hello
 	val bye = goodbye
+	// method
 	def hello(text: String) : String = hi + text
 	def goodbye(text: String) : String = bye + text
 }
@@ -18,6 +21,8 @@ object Hw {
 		// sbt 'run hello' 
 		val output: String = if(args(0) == "hello") {
 			Yo()
+		} else if(args(0) == "match") {
+			Match("two")
 		} else {
 			"Unknown argument: " + args(0)
 		}
@@ -25,7 +30,19 @@ object Hw {
 	}
 }
 
+object Match extends (String => String) {
+	def apply (test: String) : String = {
+		var result: String = test match {
+  			case i if i == "one" => "1"
+  			case i if i == "two" => "2"
+  			case _ => "0"
+		}
+		result
+	}
+}
+
 object Yo {
+	// function
 	def apply() : String = {
 		val names = List("John", "James", "Paul", "Roger")
 		val c = new Greeting("Hello ", "Goodbye ")
@@ -39,6 +56,8 @@ object Yo {
 	}
 }
 	/*
+
+	Methods in classes are methods. Methods defined standalone in the repl are Function* instances.
 
 	def functionName(argumentName: argumentType) : returnType = {
 		calculation
