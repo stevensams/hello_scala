@@ -11,7 +11,7 @@ trait Goodbye {
 class Greeting(hello: String, goodbye: String) extends Hello with Goodbye {
 	val hi = hello
 	val bye = goodbye
-	// method
+	// method - inside class
 	def hello(text: String) : String = hi + text
 	def goodbye(text: String) : String = bye + text
 }
@@ -22,7 +22,7 @@ object Hw {
 		val output: String = if(args(0) == "hello") {
 			Yo()
 		} else if(args(0) == "match") {
-			Match("two")
+			Match(args(1))
 		} else {
 			"Unknown argument: " + args(0)
 		}
@@ -31,13 +31,20 @@ object Hw {
 }
 
 object Match extends (String => String) {
-	def apply (test: String) : String = {
+	
+	/*def apply (test: String) : String = {
 		var result: String = test match {
   			case i if i == "one" => "1"
   			case i if i == "two" => "2"
   			case _ => "0"
 		}
 		result
+	}*/
+	// funtion - inside object, though special syntactic sugar method
+	def apply(aString: String) = aString match {
+  		case "two"=> "2"
+  		case "one" => "1"
+  		case _ => "Don't know..."
 	}
 }
 
